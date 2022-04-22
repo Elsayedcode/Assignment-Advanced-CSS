@@ -1,0 +1,14 @@
+$primary-color:#fff;
+$secondary-color:#c3cfe2;
+$background-Color:#c3cfe2;
+$links-color:#fff;
+$font-family:Arial, Helvetica, sans-serif;
+$hover-width:180px;
+
+@mixin overflow-transition {
+    padding:12px;
+    width:50px;
+    height:50px;
+    overflow:hidden;
+    transition: width 0.5s ease;
+}

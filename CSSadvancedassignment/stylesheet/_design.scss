@@ -1,0 +1,36 @@
+.design {
+    border-radius: 25px;
+    box-shadow: 0px 5px 8px 8px #bbb9b9;
+    margin:30px 80px 50px 80px;
+    background:linear-gradient( to bottom,#fff 0%,#fff 60%,
+    #686de0 60%,#686de0 100%);
+    width:80%;
+    height:100%;
+        & .text{
+           line-height: 40px;
+           color:rgb(93, 92, 92);
+           padding:30px ;
+           font-size:35px;
+           font-family: $font-family;
+           
+        }
+    
+    & .ik {
+        margin-top: 20px;
+        border-radius: 50%;
+        width:200px;
+        height:200px;  
+        border:8px solid white; 
+    } 
+        & .head {
+            font-family: $font-family;
+            font-size: 25px;
+            color:$primary-color; 
+         }
+          & a{
+            color:$secondary-color;
+            text-decoration: none;
+            font-size: 30px;
+            
+        }
+    }    

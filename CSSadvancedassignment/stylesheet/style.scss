@@ -1,0 +1,199 @@
+//variables files imported to Scss
+@import'vars';
+@import'design';
+
+*{
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+  }
+  body{
+    background:$background-Color;
+    text-align:center;
+    font-size: 25px;
+   
+  } 
+  //Nesting example
+    ul{
+        display:flex;
+        list-style-type: none;
+        li{
+            padding:15px;
+           a{color:#fff;
+            }
+        }
+                }     
+/*using @Mixin in all social media icons class
+i also used some variables from _vars file */    
+    .fa-laptop-code {
+        background-color: #e17b77;
+        position: absolute;
+        top: 1;
+        right: 0;
+        margin-top:80px;
+        @include overflow-transition;
+        &:hover{
+            width: $hover-width;
+            &::after {
+                font-size:8px;
+                text-decoration: underline;
+            /*only here i coundn't avoid uppercase text
+            i have tried alot to convert the text to lower-case     
+            but it didn't work*/        
+                content: " Check out my blog"; 
+                padding-left: 10px;
+            }    
+        }   
+        }
+    .fa-twitter {
+        background-color: #00aced;
+        position: absolute;
+        top: 1;
+        right: 0;
+        margin-top:130px;
+        @include overflow-transition;
+        &:hover{
+            width: $hover-width;
+    }
+    &::after {
+        font-size:12px;
+        padding-left: 10px;
+        text-decoration: underline;
+        content: " follow me on twitter";
+        
+    }    
+    }
+    .fa-linkedin-in {
+        background-color: #007bb6;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-top:195px;
+        @include overflow-transition;
+        &:hover{
+            width:$hover-width;
+    }
+    &::after {
+        font-size:12px;
+        content:"  Connect on Linkedin";
+        text-decoration: underline;
+        padding-left: 10px;
+    }    
+    }
+    .fa-facebook-f {
+        background-color: #3b5998;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-top:245px;
+        @include overflow-transition; 
+        &:hover{
+            width:$hover-width; 
+            &::after {
+                font-size:12px;
+                text-decoration: underline;
+                content:"  Like my facebook page";
+                padding-left: 10px;
+            }    
+    }
+    }
+    .fa-github {
+        background-color: #333;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-top:295px;
+        @include overflow-transition;
+        &:hover{
+            width:$hover-width; 
+    }  
+    &::after {
+        font-size:12px;
+        text-decoration: underline;
+        content:"   See projects on GitHub";
+        padding-left: 10px;
+    }       
+    }
+    /* Here suppost be the design class but to have a  
+     Dry and short effective code i have saved the 
+     class in separat file and then @imported to scss*/ 
+      
+        .container-grid{
+            margin:20px;
+            display:grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 20px 20px;
+        }
+        .container {
+          position: relative;
+          width: 350px;
+          height: 350px;
+          display:flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .container:before {
+          /* empty pseudo */
+          content: '';
+         /* start transparent, include a transition */
+          opacity: 0;
+          transition: opacity 0.5s ease;
+          border-radius: 10px;
+          /* covers the whole div */
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.5);
+          z-index: 2;
+        }
+         .container:hover:before {
+          opacity: 1;
+          background-color: rgb(55, 95, 151); 
+        }
+        .container img {
+          position: absolute;
+          border-radius: 10px;
+          display: inline-block;
+          max-width: 100%;
+          height: auto;
+          z-index: 0;
+        }
+        .btn {
+          opacity: 0;
+          transition: opacity 0.5s ease;
+          position: relative;
+          padding: 0 40px;
+          height: 40px;
+          line-height: 40px;
+          max-width: 260px;
+          cursor: pointer;
+          z-index: 2; 
+        }
+        .container:hover .btn {
+          opacity: 1;
+        }
+    
+       @media screen and (max-width: 600px){
+      .container-grid { grid-template-columns: 1fr;}
+      }
+      @media screen and (min-width:786px) {
+      .container-grid { grid-template-columns: 1fr 1fr;}
+      }
+      @media screen and (min-width: 1024px) {
+      .container-grid { grid-template-columns: 1fr 1fr 1fr;}
+      }
+        
+      
+          
+    
+    
+        
+      
+     
+         
+      
+    
+  

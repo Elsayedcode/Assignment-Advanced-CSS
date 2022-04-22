@@ -1,0 +1,296 @@
+.design {
+  border-radius: 25px;
+  -webkit-box-shadow: 0px 5px 8px 8px #bbb9b9;
+          box-shadow: 0px 5px 8px 8px #bbb9b9;
+  margin: 30px 80px 50px 80px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), color-stop(60%, #fff), color-stop(60%, #686de0), to(#686de0));
+  background: linear-gradient(to bottom, #fff 0%, #fff 60%, #686de0 60%, #686de0 100%);
+  width: 80%;
+  height: 100%;
+}
+
+.design .text {
+  line-height: 40px;
+  color: #5d5c5c;
+  padding: 30px;
+  font-size: 35px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.design .ik {
+  margin-top: 20px;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  border: 8px solid white;
+}
+
+.design .head {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  color: #fff;
+}
+
+.design a {
+  color: #c3cfe2;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: #c3cfe2;
+  text-align: center;
+  font-size: 25px;
+}
+
+ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+}
+
+ul li {
+  padding: 15px;
+}
+
+ul li a {
+  color: #fff;
+}
+
+/*using @Mixin in all social media icons class
+i also used some variables from _vars file */
+.fa-laptop-code {
+  background-color: #e17b77;
+  position: absolute;
+  top: 1;
+  right: 0;
+  margin-top: 80px;
+  padding: 12px;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  -webkit-transition: width 0.5s ease;
+  transition: width 0.5s ease;
+}
+
+.fa-laptop-code:hover {
+  width: 180px;
+}
+
+.fa-laptop-code:hover::after {
+  font-size: 8px;
+  text-decoration: underline;
+  /*only here i coundn't avoid uppercase text
+            i have tried alot to convert the text to lower-case     
+            but it didn't work*/
+  content: " Check out my blog";
+  padding-left: 10px;
+}
+
+.fa-twitter {
+  background-color: #00aced;
+  position: absolute;
+  top: 1;
+  right: 0;
+  margin-top: 130px;
+  padding: 12px;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  -webkit-transition: width 0.5s ease;
+  transition: width 0.5s ease;
+}
+
+.fa-twitter:hover {
+  width: 180px;
+}
+
+.fa-twitter::after {
+  font-size: 12px;
+  padding-left: 10px;
+  text-decoration: underline;
+  content: " follow me on twitter";
+}
+
+.fa-linkedin-in {
+  background-color: #007bb6;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 195px;
+  padding: 12px;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  -webkit-transition: width 0.5s ease;
+  transition: width 0.5s ease;
+}
+
+.fa-linkedin-in:hover {
+  width: 180px;
+}
+
+.fa-linkedin-in::after {
+  font-size: 12px;
+  content: "  Connect on Linkedin";
+  text-decoration: underline;
+  padding-left: 10px;
+}
+
+.fa-facebook-f {
+  background-color: #3b5998;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 245px;
+  padding: 12px;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  -webkit-transition: width 0.5s ease;
+  transition: width 0.5s ease;
+}
+
+.fa-facebook-f:hover {
+  width: 180px;
+}
+
+.fa-facebook-f:hover::after {
+  font-size: 12px;
+  text-decoration: underline;
+  content: "  Like my facebook page";
+  padding-left: 10px;
+}
+
+.fa-github {
+  background-color: #333;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 295px;
+  padding: 12px;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  -webkit-transition: width 0.5s ease;
+  transition: width 0.5s ease;
+}
+
+.fa-github:hover {
+  width: 180px;
+}
+
+.fa-github::after {
+  font-size: 12px;
+  text-decoration: underline;
+  content: "   See projects on GitHub";
+  padding-left: 10px;
+}
+
+/* Here suppost be the design class but to have a  
+     Dry and short effective code i have saved the 
+     class in separat file and then @imported to scss*/
+.container-grid {
+  margin: 20px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+  gap: 20px 20px;
+}
+
+.container {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container:before {
+  /* empty pseudo */
+  content: '';
+  /* start transparent, include a transition */
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+  border-radius: 10px;
+  /* covers the whole div */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.container:hover:before {
+  opacity: 1;
+  background-color: #375f97;
+}
+
+.container img {
+  position: absolute;
+  border-radius: 10px;
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+  z-index: 0;
+}
+
+.btn {
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+  position: relative;
+  padding: 0 40px;
+  height: 40px;
+  line-height: 40px;
+  max-width: 260px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.container:hover .btn {
+  opacity: 1;
+}
+
+@media screen and (max-width: 600px) {
+  .container-grid {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (min-width: 786px) {
+  .container-grid {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container-grid {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+/*# sourceMappingURL=style.css.map */
